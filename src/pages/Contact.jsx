@@ -69,10 +69,7 @@ export default function Contact() {
               <label className='form-label'>Phone <span style={{ fontWeight: 400, color: 'var(--muted)', fontSize: 13 }}>(optional)</span></label>
               <input aria-label='Phone' className='input' placeholder='+1 (555) 123-4567' value={form.phone} onChange={handleChange('phone')} disabled={sent} />
             </div>
-
-            <div>
-              <ModernSelect id='reason' label='Reason' value={form.reason} onChange={e => setForm(f => ({ ...f, reason: e.target.value }))} options={reasons} />
-            </div>
+            <div />
           </div>
 
           <div className='form-row'>
