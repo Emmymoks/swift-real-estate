@@ -1,0 +1,332 @@
+const properties = [
+  {
+    id: '1',
+    title: 'Oceanfront Contemporary Villa',
+    type: 'Luxury Villa',
+    location: 'Malibu, CA',
+    price: '$12,500,000',
+    beds: 6,
+    baths: 7,
+    area: '8,500 sqft',
+    img: 'https://i.pinimg.com/1200x/a1/f5/0e/a1f50eb2ada1c5f9666df99b2f7e9be7.jpg',
+    gallery: [
+      'https://i.pinimg.com/1200x/4e/14/73/4e14738fd20677d8b03177099a83f5cf.jpg',
+      'https://i.pinimg.com/1200x/7d/af/ba/7dafbaf56d1cb149fdad721b22ad429b.jpg'
+    ],
+    description: 'A breathtaking oceanfront villa with floor-to-ceiling glass, infinity pool, private access to the beach, and full smart-home automation.'
+  },
+  {
+    id: '2',
+    title: 'Downtown Penthouse Suite',
+    type: 'Penthouse',
+    location: 'New York, NY',
+    price: '$8,200,000',
+    beds: 4,
+    baths: 4,
+    area: '4,200 sqft',
+    img: 'https://i.pinimg.com/1200x/91/61/d7/9161d7cbb74093462f06a0810db13e2a.jpg',
+    gallery: [
+      'https://i.pinimg.com/1200x/d3/e5/a7/d3e5a77e89d60edc40b85b0534feccb1.jpg',
+      'https://i.pinimg.com/1200x/33/6c/1d/336c1dfbf0c11938609275a17efa55a1.jpg'
+    ],
+    description: 'A sky-high penthouse with skyline views, private elevator access, and bespoke finishes throughout.'
+  },
+  {
+    id: '3',
+    title: 'Historic Manor Estate',
+    type: 'Estate',
+    location: 'Charleston, SC',
+    price: '$4,500,000',
+    beds: 7,
+    baths: 6,
+    area: '10,100 sqft',
+    img: 'https://i.pinimg.com/1200x/2a/e2/0e/2ae20e7250cdbb62d39a9c835a124735.jpg',
+    gallery: [
+      'https://i.pinimg.com/736x/1d/05/e9/1d05e90870920b63e90e2a26a9efb44c.jpg',
+      'https://i.pinimg.com/1200x/2d/26/35/2d263563660a2e11a4b0d6c83b860be3.jpg'
+    ],
+    description: 'A beautifully preserved manor set on sprawling grounds, combining historic charm with modern amenities.'
+  },
+  {
+    id: '4',
+    title: 'Modern Suburban Family Home',
+    type: 'Family Home',
+    location: 'Austin, TX',
+    price: '$1,350,000',
+    beds: 5,
+    baths: 4,
+    area: '3,800 sqft',
+    img: 'https://i.pinimg.com/1200x/1c/58/8f/1c588f20ee3f6ac5c0e779ff0e4a76ee.jpg',
+    gallery: [
+      'https://i.pinimg.com/1200x/3c/01/ec/3c01ec4b5039be727c99fd50e65e5043.jpg'
+    ],
+    description: 'A family-oriented modern home located in an upscale suburb with smart HVAC and energy-efficient features.'
+  }
+  ,
+  {
+    id: '5',
+    title: 'Cliffside Luxury Villa',
+    type: 'Luxury Villa',
+    location: 'Monterey, CA',
+    price: '$9,800,000',
+    beds: 5,
+    baths: 6,
+    area: '6,200 sqft',
+    img: 'https://i.pinimg.com/1200x/7d/af/ba/7dafbaf56d1cb149fdad721b22ad429b.jpg',
+    gallery: [
+      'https://i.pinimg.com/1200x/43/ad/dd/43addd390f99bfebd7375d818bba7c79.jpg'
+    ],
+    description: 'Perched on a private cliff, this villa offers sweeping ocean views, a private spa, and modern minimalist interiors.'
+  },
+  {
+    id: '6',
+    title: 'Mediterranean Luxury Villa',
+    type: 'Luxury Villa',
+    location: 'Miami, FL',
+    price: '$7,900,000',
+    beds: 4,
+    baths: 5,
+    area: '5,400 sqft',
+    img: 'https://i.pinimg.com/1200x/21/35/b4/2135b4092b2569229ce2898f0e57679a.jpg',
+    gallery: ['https://i.pinimg.com/1200x/4e/8c/6d/4e8c6d7d4a71047a74298321f5ef2e8a.jpg'],
+    description: 'Mediterranean-inspired villa with lush courtyards, high ceilings, and indoor-outdoor living spaces.'
+  },
+  {
+    id: '7',
+    title: 'Secluded Mountain Villa',
+    type: 'Luxury Villa',
+    location: 'Aspen, CO',
+    price: '$6,500,000',
+    beds: 4,
+    baths: 4,
+    area: '4,100 sqft',
+    img: 'https://i.pinimg.com/1200x/67/67/67/67676798dd8939178699afcd61bfec0c.jpg',
+    gallery: [],
+    description: 'A mountain retreat with panoramic views, private ski access, and heated outdoor terrace.'
+  },
+  {
+    id: '8',
+    title: 'Infinity Edge Beach Villa',
+    type: 'Luxury Villa',
+    location: 'Santa Barbara, CA',
+    price: '$10,200,000',
+    beds: 6,
+    baths: 6,
+    area: '7,300 sqft',
+    img: 'https://i.pinimg.com/1200x/67/1e/45/671e45c2d45ff5a15f7f4c4c8f8a96a4.jpg',
+    gallery: ['https://i.pinimg.com/1200x/14/d6/8c/14d68c743f302b22ecc94a3ababe4530.jpg'],
+    description: 'A contemporary villa with infinity pool, private beach foyer, and high-end chef kitchen.'
+  },
+  {
+    id: '9',
+    title: 'Riverside Modern Villa',
+    type: 'Luxury Villa',
+    location: 'Portland, OR',
+    price: '$3,900,000',
+    beds: 5,
+    baths: 5,
+    area: '4,800 sqft',
+    img: 'https://i.pinimg.com/1200x/33/e9/2e/33e92eabae1cd6f96fafaf68c6ca4961.jpg',
+    gallery: ['https://i.pinimg.com/1200x/c3/26/98/c3269874e788ab11e6d926288b28687c.jpg'],
+    description: 'Contemporary riverside villa with glass walls, a private dock, and expansive terraces.'
+  },
+  {
+    id: '10',
+    title: 'Rooftop Skyline Penthouse',
+    type: 'Penthouse',
+    location: 'Chicago, IL',
+    price: '$5,400,000',
+    beds: 3,
+    baths: 3,
+    area: '3,200 sqft',
+    img: 'https://i.pinimg.com/1200x/89/24/dc/8924dc179ab70013f049fd07ca4ddd7f.jpg',
+    gallery: ['https://i.pinimg.com/1200x/9b/ce/ba/9bcebab2ce016668630819c22f46ec9a.jpg'],
+    description: 'A luxurious penthouse with rooftop terrace, city views, and custom designer interiors.'
+  },
+  {
+    id: '11',
+    title: 'Loft-Style Penthouse',
+    type: 'Penthouse',
+    location: 'Seattle, WA',
+    price: '$3,100,000',
+    beds: 2,
+    baths: 2,
+    area: '2,100 sqft',
+    img: 'https://i.pinimg.com/1200x/f8/d7/c0/f8d7c0f268538924c2d24b5b2db2f6c4.jpg',
+    gallery: ['https://i.pinimg.com/1200x/16/8f/21/168f21c6b25179cf668bb171f5bdc1f1.jpg'],
+    description: 'Open-plan loft penthouse with industrial finishes and floor-to-ceiling windows.'
+  },
+  {
+    id: '12',
+    title: 'Skyline Corner Penthouse',
+    type: 'Penthouse',
+    location: 'Los Angeles, CA',
+    price: '$6,750,000',
+    beds: 4,
+    baths: 5,
+    area: '4,900 sqft',
+    img: 'https://i.pinimg.com/1200x/b9/8f/8c/b98f8c2444ff18989063168548092450.jpg',
+    gallery: [],
+    description: 'Expansive corner penthouse with panoramic city views and private amenity level access.'
+  },
+  {
+    id: '13',
+    title: 'Riverside Historic Estate',
+    type: 'Estate',
+    location: 'Hudson Valley, NY',
+    price: '$7,250,000',
+    beds: 8,
+    baths: 7,
+    area: '12,000 sqft',
+    img: 'https://i.pinimg.com/1200x/95/90/3d/95903d01e2f2731befc8f08073301352.jpg',
+    gallery: ['https://i.pinimg.com/1200x/5a/0f/58/5a0f58c40b0aa058a92e59ca29fdb4c1.jpg'],
+    description: 'A stately riverfront estate with landscaped gardens, guest houses, and historic detailing.'
+  },
+  {
+    id: '14',
+    title: 'Countryside Manor Estate',
+    type: 'Estate',
+    location: 'Napa Valley, CA',
+    price: '$5,900,000',
+    beds: 6,
+    baths: 6,
+    area: '9,400 sqft',
+    img: 'https://i.pinimg.com/1200x/3f/d8/19/3fd81967a3ed44f69951312af1c9cbd7.jpg',
+    gallery: [],
+    description: 'A vineyard-adjacent manor with guest cottages, pool, and private tasting room.'
+  },
+  {
+    id: '15',
+    title: 'Walled Garden Estate',
+    type: 'Estate',
+    location: 'Charleston, SC',
+    price: '$3,800,000',
+    beds: 5,
+    baths: 5,
+    area: '7,500 sqft',
+    img: 'https://i.pinimg.com/1200x/73/6f/b7/736fb713e6813e7b520c8b80734c9617.jpg',
+    gallery: [],
+    description: 'A private estate with walled gardens, reflecting pools, and restored period architecture.'
+  },
+  {
+    id: '16',
+    title: 'Riverbend Family Home',
+    type: 'Family Home',
+    location: 'Raleigh, NC',
+    price: '$920,000',
+    beds: 4,
+    baths: 3,
+    area: '2,900 sqft',
+    img: 'https://i.pinimg.com/1200x/e5/9c/9b/e59c9b602a08d17d1d71f58572a20cf9.jpg',
+    gallery: [],
+    description: 'A comfortable family home near parks and schools with a large backyard and modern kitchen.'
+  },
+  {
+    id: '17',
+    title: 'Suburban Oasis Family Home',
+    type: 'Family Home',
+    location: 'Charlotte, NC',
+    price: '$675,000',
+    beds: 4,
+    baths: 3,
+    area: '2,500 sqft',
+    img: 'https://i.pinimg.com/1200x/f7/8e/8c/f78e8cfc14dcc0733e30aa6a21ce897e.jpg',
+    gallery: [],
+    description: 'Bright family home with open-plan living and close access to community amenities.'
+  },
+  {
+    id: '18',
+    title: 'Eco Modern Family Home',
+    type: 'Family Home',
+    location: 'Boulder, CO',
+    price: '$1,150,000',
+    beds: 3,
+    baths: 3,
+    area: '2,200 sqft',
+    img: 'https://i.pinimg.com/1200x/6b/42/3a/6b423a75c5551bfeb7da527317e73411.jpg',
+    gallery: [],
+    description: 'Energy-efficient home with solar, passive heating, and a modern open layout.'
+  },
+  {
+    id: '19',
+    title: 'Cozy Cul-de-Sac Family Home',
+    type: 'Family Home',
+    location: 'Irvine, CA',
+    price: '$980,000',
+    beds: 4,
+    baths: 3,
+    area: '2,600 sqft',
+    img: 'https://i.pinimg.com/1200x/e2/de/74/e2de746d1a0a1d29b6a53deca9b03ee3.jpg',
+    gallery: [],
+    description: 'A family-friendly home in a quiet cul-de-sac with a landscaped yard and modern finishes.'
+  },
+  {
+    id: '20',
+    title: 'Harborview Penthouse',
+    type: 'Penthouse',
+    location: 'Boston, MA',
+    price: '$4,300,000',
+    beds: 3,
+    baths: 3,
+    area: '3,000 sqft',
+    img: 'https://i.pinimg.com/1200x/f8/d0/c9/f8d0c9b95da2d79695a039af96b3d521.jpg',
+    gallery: ['https://i.pinimg.com/1200x/81/7a/a7/817aa749aace9488429deafc5104b90e.jpg'],
+    description: 'Elegant harbor-facing penthouse with tailored interiors and concierge services.'
+  },
+  {
+    id: '21',
+    title: 'Grand Architectural Estate',
+    type: 'Estate',
+    location: 'Palm Beach, FL',
+    price: '$14,500,000',
+    beds: 10,
+    baths: 12,
+    area: '22,000 sqft',
+    img: 'https://i.pinimg.com/1200x/9f/ba/ac/9fbaaca36bfd209d70118a6c84167052.jpg',
+    gallery: [],
+    description: 'An expansive estate with private marina, formal gardens, and multiple guest residences.'
+  },
+  {
+    id: '22',
+    title: 'Urban Chic Penthouse',
+    type: 'Penthouse',
+    location: 'San Francisco, CA',
+    price: '$7,200,000',
+    beds: 3,
+    baths: 4,
+    area: '3,600 sqft',
+    img: 'https://i.pinimg.com/1200x/91/61/d7/9161d7cbb74093462f06a0810db13e2a.jpg',
+    gallery: ['https://i.pinimg.com/1200x/31/d8/5a/31d85a10462bf7298b0ebc1f407b0a3b.jpg'],
+    description: 'Chic penthouse in the heart of the city with custom finishes and secure parking.'
+  },
+  {
+    id: '23',
+    title: 'Lakeside Estate Retreat',
+    type: 'Estate',
+    location: 'Lake Tahoe, NV',
+    price: '$6,750,000',
+    beds: 6,
+    baths: 7,
+    area: '11,000 sqft',
+    img: 'https://i.pinimg.com/1200x/cf/4b/5b/cf4b5ba9bff920d84c347c00a677231a.jpg',
+    gallery: [],
+    description: 'A majestic lakeside estate with private beach, boathouse, and alpine-modern interiors.'
+  },
+  {
+    id: '24',
+    title: 'Coastal Modern Family Home',
+    type: 'Family Home',
+    location: 'San Diego, CA',
+    price: '$1,450,000',
+    beds: 4,
+    baths: 3,
+    area: '3,100 sqft',
+    img: 'https://i.pinimg.com/1200x/6d/7a/4a/6d7a4a9acbc0a9e38a34a89447f2f85e.jpg',
+    gallery: ['https://i.pinimg.com/1200x/b6/6a/cd/b66acdd9a11763dd7c467cbee8daf1cf.jpg',
+      'https://i.pinimg.com/1200x/2f/52/d0/2f52d0e30c2e53a1a9bcaa38184d6f2e.jpg'
+    ],
+    description: 'Family-friendly coastal home with modern interiors and a short walk to the beach.'
+  }
+]
+
+export default properties
