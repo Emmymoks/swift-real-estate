@@ -31,9 +31,7 @@ export default function Navbar(){
           ))}
         </nav>
 
-        <div className='cta hide-on-mobile'>
-          <Link to='/contact' className='btn-primary'>Get in touch</Link>
-        </div>
+        {/* header CTA removed (Get in touch button moved to nav links) */}
 
         {/* mobile hamburger */}
   <button type="button" className={"hamburger" + (open ? ' open' : '')} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(v => !v)}>
@@ -57,9 +55,7 @@ export default function Navbar(){
                   </NavLink>
                 </motion.div>
               ))}
-              <div style={{marginTop:12}}>
-                <Link to='/contact' onClick={() => setOpen(false)} className='btn-primary'>Get in touch</Link>
-              </div>
+              {/* mobile CTA removed (Get in touch is available in nav links) */}
             </div>
           </motion.div>
         )}
